@@ -1,5 +1,8 @@
 /* 1. Importar una fuente moderna y pesada (similar a la de la imagen) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Pattaya&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 
 /* ICONO TEMA */
 .theme-toggle button {
@@ -37,9 +40,14 @@
 /* Aquí termina */
 
 :root {
-    --rojo-acento: #ff3e3e; /* El rojo vibrante de la cinta "Follow us" */
-    --negro: #000000;
-    --gris-claro: #f5f5f5;
+    --rojo-acento: #ff3e3e;
+    --fondo: #ffffff; /* Color para modo claro */
+    --texto: #000000;
+}
+
+[data-theme="dark"] {
+    --fondo: #0a0a0a; /* Color para modo oscuro */
+    --texto: #ffffff;
 }
 
 * {
@@ -48,10 +56,13 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Inter', sans-serif;
-    background-color: white;
-    color: var(--negro);
+    background-color: var(--fondo); /* Antes decía white o #fff */
+    color: var(--texto);           /* Antes decía black o #000 */
+    padding-top: 80px; 
+    transition: background-color 0.3s ease, color 0.3s ease; /* Para que el cambio sea suave */
 }
 
 /* 2. Navegación minimalista */
@@ -83,6 +94,9 @@ display: flex;
     width: 100%;        /* Asegura que cubra todo el ancho */
     z-index: 1000;      /* La pone por encima de todo lo demás (como el texto gigante) */
     border-bottom: 1px solid #f0f0f0; /* Una línea muy sutil para separarla del contenido */
+    background: var(--fondo); /* Esto hace que la barra también cambie */
+    color: var(--texto);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 /* IMPORTANTE: Compensar el espacio en el cuerpo */
@@ -91,6 +105,9 @@ body {
     background-color: white;
     color: var(--negro);
     padding-top: 80px; /* Evita que la barra tape el inicio de tu frase "ENTRENA DURO" */
+    background-color: var(--fondo); 
+    color: var(--texto);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .logo {
@@ -110,6 +127,7 @@ body {
     color: var(--negro);
     font-weight: 600;
     transition: color 0.2s ease; /* Hace que el cambio de color sea suave, no brusco */
+    color: var(--texto);
 }
 
 /* Efecto al pasar el mouse (Hover) */
@@ -178,7 +196,17 @@ body {
     justify-content: center; /* Centra verticalmente */
     align-items: center; /* Centra horizontalmente */
     text-align: center; /* Centra el texto de las líneas */
-    background-color: white;
+    background-color: var(--fondo); /* En lugar de white o #fff */
+    transition: background-color 0.3s ease; /* Para que el cambio sea suave */
+    background-color: transparent; /* Para que use el fondo del body */
+}
+
+.fuente-especial {
+    font-family: 'Pattaya', cursive; /* O la fuente que elegiste */
+    text-transform: none; /* ESTA LÍNEA es la que permite las minúsculas */
+    font-size: 1em;
+    color: var(--texto);
+    display: inline-block; /* Ayuda a que los márgenes y transformaciones funcionen mejor */
 }
 
 .subtitle {
@@ -200,6 +228,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: -4px; /* Junta más las letras para ese look moderno */
     word-spacing: 10px;   /* Separa un poco las palabras para que se lean bien */
+    color: var(--texto);
 }
 
 .accent {
@@ -208,6 +237,8 @@ h1 {
 
 /* 4. Botón moderno */
 .cta-button {
+    color: var(--texto); /* ESTO lo hace visible en ambos modos */
+    transition: color 0.3s, letter-spacing 0.3s;
     margin: 2rem auto 0 auto; /* El 'auto' a los lados fuerza el centrado horizontal */
     background: transparent;
     border: none;
@@ -235,7 +266,8 @@ h1 {
 /* 5. Cuadrícula de instructores (Creators) */
 .creators {
     padding: 5rem 5%; /* Reducimos un poco el padding para que no sea tan largo */
-    background-color: white;
+    background-color: var(--fondo); /* En lugar de white o #fff */
+    transition: background-color 0.3s ease; /* Para que el cambio sea suave */
     max-width: 1200px; /* Evita que la sección se estire infinito en pantallas pro */
     margin: 0 auto;    /* Centra la sección completa */
 }
@@ -266,7 +298,7 @@ h1 {
 .photo-placeholder {
     width: 100%;
     aspect-ratio: 1 / 1.1; /* Proporción un poco más cuadrada y compacta */
-    background-color: #f0f0f0;
+    background-color: var(--gris-claro); /* Usará el gris oscuro en modo dark */
     margin-bottom: 1rem;
     border-radius: 2px; /* Bordes casi rectos para el look moderno */
 }
@@ -287,10 +319,11 @@ h1 {
 
 /* 7. Footer Estilo Referencia (Ajustado) */
 .main-footer {
-    padding: 8rem 5% 2rem 5%; /* Más espacio superior para que respire */
-    background-color: white;
-    border-top: 1px solid #eee;
+    padding: 8rem 5% 2rem 5%;
+    background-color: var(--fondo); /* Cambia 'white' por la variable */
+    border-top: 1px solid var(--linea-divisoria, rgba(128,128,128,0.2));
     width: 100%;
+    transition: background-color 0.3s ease; /* Para que cambie suave igual que el resto */
 }
 
 .footer-link {
@@ -300,6 +333,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: -1px; /* Un poco menos de espacio negativo para que sea legible */
     line-height: 1.1;     /* Ajusta el espacio entre líneas si el texto salta */
+    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */
 }
 
 .footer-top {
@@ -316,7 +350,7 @@ h1 {
 }
 
 .footer-link.contact { 
-    color: black;
+    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */;
     text-align: right; /* Alinea CONTACT US a la derecha */
     flex: 1;
 }
@@ -332,7 +366,7 @@ h1 {
     font-size: 0.7rem;
     letter-spacing: 2px;
     margin-bottom: 2rem;
-    color: #000;
+    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */;
     border-bottom: 1px solid #eee; /* Línea sutil debajo de los títulos */
     padding-bottom: 10px;
     width: fit-content;
@@ -342,7 +376,8 @@ h1 {
     list-style: none;
     line-height: 2.5;
     font-size: 0.85rem;
-    color: #444;
+    color: var(--texto); /* Cambia el gris oscuro por la variable dinámica */
+    opacity: 0.8; /* Les damos un poco de transparencia para elegancia */
 }
 
 .footer-branding {
@@ -356,6 +391,7 @@ h1 {
     letter-spacing: -5px;
     line-height: 0.8;
     margin-bottom: 2rem;
+    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */
 }
 
 .footer-info-text {
@@ -363,6 +399,7 @@ h1 {
     font-size: 1.1rem;
     text-transform: uppercase;
     margin-bottom: 5px;
+    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */
 }
 
 .email-accent {
@@ -376,8 +413,9 @@ h1 {
     display: flex;
     justify-content: space-between;
     font-size: 0.7rem;
-    color: #999;
-    border-top: 1px solid #f0f0f0;
+    color: var(--texto);
+    opacity: 0.5;
+    border-top: 1px solid var(--linea-divisoria, rgba(128,128,128,0.1));
     padding-top: 3rem;
     margin-top: 4rem;
 }
