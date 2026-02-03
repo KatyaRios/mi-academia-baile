@@ -1,7 +1,40 @@
 /* 1. Importar una fuente moderna y pesada (similar a la de la imagen) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Oswald:wght@700&display=swap');
 
+/* ICONO TEMA */
+.theme-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--texto);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    
+    /* ESTO LO SUBE: */
+    transform: translateY(-2px); /* Ajusta este número (ej: -3px o -4px) hasta que lo veas alineado */
+    
+    transition: transform 0.2s ease, color var(--transicion);
+}
 
+/* Para que al pasar el mouse no pierda la posición */
+.theme-toggle button:hover {
+    transform: translateY(-2px) scale(1.1); 
+    color: var(--rojo-acento);
+}
+
+/* Opcional: Iconos en el footer */
+.social-icons span {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.social-icons span:hover {
+    color: var(--rojo-acento);
+}
+
+/* Aquí termina */
 
 :root {
     --rojo-acento: #ff3e3e; /* El rojo vibrante de la cinta "Follow us" */
