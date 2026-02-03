@@ -48,6 +48,13 @@ body {
     font-weight: 600;
 }
 
+.divider {
+    width: 1px;
+    height: 20px;
+    background-color: #000; /* Línea negra delgada */
+    margin: 0 10px;
+}
+
 /* 3. Sección Hero (Impacto total) */
 .hero {
     height: 90vh;
@@ -80,7 +87,7 @@ h1 {
 }
 
 .accent {
-    color: var(--rojo-acento);
+    color: #ff3e3e; /* El rojo vibrante de la academia de referencia */
 }
 
 /* 4. Botón moderno */
