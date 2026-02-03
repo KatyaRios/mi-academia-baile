@@ -1,6 +1,8 @@
 /* 1. Importar una fuente moderna y pesada (similar a la de la imagen) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Oswald:wght@700&display=swap');
 
+
+
 :root {
     --rojo-acento: #ff3e3e; /* El rojo vibrante de la cinta "Follow us" */
     --negro: #000000;
@@ -21,14 +23,26 @@ body {
 
 /* 2. Navegación minimalista */
 .navbar {
-    display: flex;
+display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5%; /* Reducimos un poco el padding para que no ocupe tanto espacio fija */
-    background: white;
+    padding: 1.5rem 5%;
+    
+    /* Fondo blanco con 80% de opacidad */
+    background: rgba(255, 255, 255, 0.8); 
+    
+    /* Efecto de desenfoque estilo cristal (Glassmorphism) */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con Safari */
+
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Línea divisoria casi invisible */
     
     /* Propiedades para fijar la barra */
     position: fixed;    /* La fija en la pantalla */
@@ -57,10 +71,17 @@ body {
     gap: 2rem;
 }
 
+/* Estilo base de los enlaces en el menú */
 .nav-links a {
     text-decoration: none;
     color: var(--negro);
     font-weight: 600;
+    transition: color 0.2s ease; /* Hace que el cambio de color sea suave, no brusco */
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.nav-links a:hover {
+    color: var(--rojo-acento); /* Cambia al rojo vibrante de tu marca */
 }
 
 .divider {
@@ -68,6 +89,52 @@ body {
     height: 20px;
     background-color: #000; /* Línea negra delgada */
     margin: 0 10px;
+}
+
+/* Contenedor del menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* El menú oculto por defecto */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco con transparencia */
+    min-width: 120px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* Sombra elegante */
+    z-index: 1100;
+    top: 100%;
+    right: 0;
+    backdrop-filter: blur(5px); /* Efecto cristal para que combine con la navbar */
+}
+
+/* Enlaces dentro del menú */
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Cambio de color al pasar el mouse por las opciones */
+.dropdown-content a:hover {
+    background-color: var(--gris-claro);
+    color: var(--rojo-acento);
+}
+
+/* Mostrar el contenido al hacer HOVER sobre el botón principal */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.arrow {
+    font-size: 0.6rem;
+    vertical-align: middle;
 }
 
 /* 3. Sección Hero (Impacto total) */
@@ -129,6 +196,7 @@ h1 {
 
 .cta-button:hover {
     letter-spacing: 2px;
+    color: var(--rojo-acento); /* Cambia al rojo vibrante de tu marca */
 }
 
 /* 5. Cuadrícula de instructores (Creators) */
@@ -279,6 +347,52 @@ h1 {
     border-top: 1px solid #f0f0f0;
     padding-top: 3rem;
     margin-top: 4rem;
+}
+
+/* Contenedor del menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* El menú oculto por defecto */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco con transparencia */
+    min-width: 120px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* Sombra elegante */
+    z-index: 1100;
+    top: 100%;
+    right: 0;
+    backdrop-filter: blur(5px); /* Efecto cristal para que combine con la navbar */
+}
+
+/* Enlaces dentro del menú */
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Cambio de color al pasar el mouse por las opciones */
+.dropdown-content a:hover {
+    background-color: var(--gris-claro);
+    color: var(--rojo-acento);
+}
+
+/* Mostrar el contenido al hacer HOVER sobre el botón principal */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.arrow {
+    font-size: 0.6rem;
+    vertical-align: middle;
 }
 
 /* Responsivo para celulares */
