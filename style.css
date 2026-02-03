@@ -170,6 +170,99 @@ h1 {
     letter-spacing: 1px;
 }
 
+/* 7. Footer Estilo Referencia (Ajustado) */
+.main-footer {
+    padding: 8rem 5% 2rem 5%; /* Más espacio superior para que respire */
+    background-color: white;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between; /* Separa FAQ de CONTACT US a los extremos */
+    margin-bottom: 8rem;
+    flex-wrap: wrap; /* Evita que se amontonen en pantallas chicas */
+}
+
+.footer-link {
+    font-size: clamp(3rem, 10vw, 6rem); /* Tamaño dinámico según la pantalla */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.footer-link.faq { 
+    color: var(--rojo-acento); 
+    flex: 1; /* Ayuda a empujar al otro elemento */
+}
+
+.footer-link.contact { 
+    color: black;
+    text-align: right; /* Alinea CONTACT US a la derecha */
+    flex: 1;
+}
+
+.footer-columns {
+    display: flex;
+    gap: 15vw; /* Espacio proporcional entre las columnas de texto */
+    margin-bottom: 6rem;
+    text-align: left;
+}
+
+.col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    color: #000;
+    border-bottom: 1px solid #eee; /* Línea sutil debajo de los títulos */
+    padding-bottom: 10px;
+    width: fit-content;
+}
+
+.col ul {
+    list-style: none;
+    line-height: 2.5;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.footer-branding {
+    text-align: center;
+    margin: 10rem 0 5rem 0; /* Espaciado masivo para el logo final */
+}
+
+.huge-logo {
+    font-size: clamp(4rem, 15vw, 10rem); /* Logo gigante que se ajusta */
+    font-weight: 900;
+    letter-spacing: -5px;
+    line-height: 0.8;
+    margin-bottom: 2rem;
+}
+
+.footer-info-text {
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.email-accent {
+    color: var(--rojo-acento);
+    font-weight: 900;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: #999;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 3rem;
+    margin-top: 4rem;
+}
 
 /* Responsivo para celulares */
 @media (max-width: 768px) {
