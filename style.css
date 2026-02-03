@@ -24,11 +24,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%;
+    padding: 1.5rem 5%; /* Reducimos un poco el padding para que no ocupe tanto espacio fija */
     background: white;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
+    
+    /* Propiedades para fijar la barra */
+    position: fixed;    /* La fija en la pantalla */
+    top: 0;             /* La pega al inicio superior */
+    width: 100%;        /* Asegura que cubra todo el ancho */
+    z-index: 1000;      /* La pone por encima de todo lo demás (como el texto gigante) */
+    border-bottom: 1px solid #f0f0f0; /* Una línea muy sutil para separarla del contenido */
+}
+
+/* IMPORTANTE: Compensar el espacio en el cuerpo */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+    color: var(--negro);
+    padding-top: 80px; /* Evita que la barra tape el inicio de tu frase "ENTRENA DURO" */
 }
 
 .logo {
@@ -117,7 +132,6 @@ h1 {
 }
 
 /* 5. Cuadrícula de instructores (Creators) */
-/* 5. Cuadrícula de instructores (TAMAÑO AJUSTADO) */
 .creators {
     padding: 5rem 5%; /* Reducimos un poco el padding para que no sea tan largo */
     background-color: white;
@@ -178,18 +192,21 @@ h1 {
     width: 100%;
 }
 
-.footer-top {
-    display: flex;
-    justify-content: space-between; /* Separa FAQ de CONTACT US a los extremos */
-    margin-bottom: 8rem;
-    flex-wrap: wrap; /* Evita que se amontonen en pantallas chicas */
-}
-
 .footer-link {
-    font-size: clamp(3rem, 10vw, 6rem); /* Tamaño dinámico según la pantalla */
+    /* Reducimos el tamaño de 4rem/6rem a algo más manejable */
+    font-size: clamp(2rem, 5vw, 3.5rem); 
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: -2px;
+    letter-spacing: -1px; /* Un poco menos de espacio negativo para que sea legible */
+    line-height: 1.1;     /* Ajusta el espacio entre líneas si el texto salta */
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea los textos por la parte superior */
+    margin-bottom: 5rem;
+    gap: 20px; /* Evita que las palabras se toquen */
 }
 
 .footer-link.faq { 
