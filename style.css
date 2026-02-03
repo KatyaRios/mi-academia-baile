@@ -83,6 +83,8 @@ h1 {
     max-width: 900px;
     margin-bottom: 2rem;
     text-transform: uppercase;
+    letter-spacing: -4px; /* Junta más las letras para ese look moderno */
+    word-spacing: 10px;   /* Separa un poco las palabras para que se lean bien */
 }
 
 .accent {
@@ -91,7 +93,7 @@ h1 {
 
 /* 4. Botón moderno */
 .cta-button {
-    margin-top: 2rem; /* Espacio entre la frase y el botón */
+    margin: 2rem auto 0 auto; /* El 'auto' a los lados fuerza el centrado horizontal */
     background: transparent;
     border: none;
     font-weight: 700;
@@ -99,8 +101,10 @@ h1 {
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center; /* Centra el texto y la flecha dentro del botón */
     gap: 10px;
     text-transform: uppercase;
+    width: max-content; /* Obliga al botón a solo ocupar el ancho de su texto */
 }
 
 .cta-button::after {
