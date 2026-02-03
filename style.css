@@ -59,11 +59,10 @@ body {
 .hero {
     height: 90vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 10%;
+    flex-direction: column; /* Pone los elementos uno debajo de otro */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto de las líneas */
     background-color: white;
 }
 
@@ -92,6 +91,7 @@ h1 {
 
 /* 4. Botón moderno */
 .cta-button {
+    margin-top: 2rem; /* Espacio entre la frase y el botón */
     background: transparent;
     border: none;
     font-weight: 700;
@@ -101,7 +101,6 @@ h1 {
     align-items: center;
     gap: 10px;
     text-transform: uppercase;
-    transition: 0.3s;
 }
 
 .cta-button::after {
