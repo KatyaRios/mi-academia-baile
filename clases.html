@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Clases | XIRA DANCE</title>
+    <link rel="stylesheet" href="clases.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<script src="script.js"></script>  
+
+<nav class="navbar">
+    <div class="logo">XIRA DANCE</div>
+    <ul class="nav-links">
+    <nav class="nav-links">
+        <a href="index.html">INICIO</a>         
+        <a href="clases.html">CLASES</a> 
+        <a href="horarios.html">HORARIOS</a>
+        <a href="inscripcion.html">INSCRIPCIÓN</a>
+    </nav>
+        <span class="divider"></span> 
+        <li><a href="#">LOGIN</a></li>
+        <span class="divider"></span> 
+        <li class="theme-toggle">
+            <button onclick="toggleTheme()" id="theme-btn" aria-label="Cambiar tema">
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+        </li>
+    </ul>
+</nav>
+
+
+<h2 class="classes-tittle">CATÁLOGO DE CLASES</h2>
+<p class="classes-description">Domine el baile desde la base hasta el rendimiento profesional con nuestro sistema de niveles escalonados.</p>
+
+<main class="classes-view">
+    <div class="filters">
+        <input type="text" id="name-search" placeholder="Buscar por nombre">
+        <select id="style-filter">
+            <option value="">Todos los estilos</option>
+            <option value="urbano">Urbano</option>
+            <option value="k-pop">K-Pop</option>
+            <option value="salsa">Salsa</option>
+            <option value="bachata">Bachata</option>
+        </select>
+        <select id="type-filter">
+            <option value="">Todos los tipos</option>
+            <option value="grupo">Grupo</option>
+            <option value="privado">Privado</option>
+            <option value="taller">Taller</option>
+        </select>
+        <select id="level-filter">
+            <option value="">Todos los niveles</option>
+            <option value="START">START</option>
+            <option value="FLOW">FLOW</option>
+            <option value="IMPACT">IMPACT</option>
+            <option value="ELITE">ELITE</option>
+        </select>
+    </div>
+
+    <div class="classes-grid">
+        <article class="class-card" data-name="Intro to Grooves" data-style="urbano" data-type="grupo" data-level="START">
+            <div class="card-image-container">
+                <img src="img/grooves.jpg" alt="Intro to Grooves">
+                <span class="level-tag">LEVEL 01</span>
+            </div>
+            <div class="card-content">
+                <h3>Intro to Grooves</h3>
+                <div class="card-meta">
+                    <p><i class="user-icon">👤</i> Alex Chen</p>
+                    <p><i class="time-icon">🕒</i> 60 min</p>
+                </div>
+                <button class="btn-book">BOOK NOW</button>
+            </div>
+        </article>
+
+        <article class="class-card" data-name="Basic Footwork" data-style="urbano" data-type="grupo" data-level="START">
+            <div class="card-image-container">
+                <img src="img/footwork.jpg" alt="Basic Footwork">
+                <span class="level-tag">LEVEL 01</span>
+            </div>
+            <div class="card-content">
+                <h3>Basic Footwork</h3>
+                <div class="card-meta">
+                    <p>👤 Sarah Jenkins</p>
+                    <p>🕒 55 min</p>
+                </div>
+                <button class="btn-book">BOOK NOW</button>
+            </div>
+        </article>
+
+        <article class="class-card" data-name="K-Pop Basics" data-style="k-pop" data-type="grupo" data-level="FLOW">
+            <div class="card-image-container">
+                <img src="img/urbano.jpg" alt="K-Pop Basics">
+                <span class="level-tag">LEVEL 02</span>
+            </div>
+            <div class="card-content">
+                <h3>K-Pop Basics</h3>
+                <div class="card-meta">
+                    <p>👤 Mia Lee</p>
+                    <p>🕒 75 min</p>
+                </div>
+                <button class="btn-book">BOOK NOW</button>
+            </div>
+        </article>
+
+        <article class="class-card" data-name="Salsa Advanced" data-style="salsa" data-type="privado" data-level="IMPACT">
+            <div class="card-image-container">
+                <img src="img/inicio.jpg" alt="Salsa Advanced">
+                <span class="level-tag">LEVEL 03</span>
+            </div>
+            <div class="card-content">
+                <h3>Salsa Advanced</h3>
+                <div class="card-meta">
+                    <p>👤 Carlos Rivera</p>
+                    <p>🕒 90 min</p>
+                </div>
+                <button class="btn-book">BOOK NOW</button>
+            </div>
+        </article>
+
+        <article class="class-card" data-name="Bachata Workshop" data-style="bachata" data-type="taller" data-level="ELITE">
+            <div class="card-image-container">
+                <img src="img/grooves.jpg" alt="Bachata Workshop">
+                <span class="level-tag">LEVEL 04</span>
+            </div>
+            <div class="card-content">
+                <h3>Bachata Workshop</h3>
+                <div class="card-meta">
+                    <p>👤 Sofia Martinez</p>
+                    <p>🕒 120 min</p>
+                </div>
+                <button class="btn-book">BOOK NOW</button>
+            </div>
+        </article>
+
+        <article class="class-card" data-name="Urban Flow" data-style="urbano" data-type="grupo" data-level="FLOW">
+            <div class="card-image-container">
+                <img src="img/footwork.jpg" alt="Urban Flow">
+                <span class="level-tag">LEVEL 02</span>
+            </div>
+            <div class="card-content">
+                <h3>Urban Flow</h3>
+                <div class="card-meta">
+                    <p>👤 Jamal Williams</p>
+                    <p>🕒 70 min</p>
+                </div>
+                <button class="btn-book">BOOK NOW</button>
+            </div>
+        </article>
+</main>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* 1. FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Pattaya&family=Poppins:wght@100;400;900&display=swap');
+
+/* 2. VARIABLES Y TEMA */
+:root {
+    --rojo-acento: #ff3e3e;
+    --fondo: #ffffff;
+    --texto: #000000;
+    --gris-claro: #f4f4f4;
+    --transicion: 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --fondo: #0a0a0a;
+    --texto: #ffffff;
+    --gris-claro: #1a1a1a;
+}
+
+/* 3. RESET Y BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    padding-top: 80px; 
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+/* 4. NAVBAR (Incluye Dropdown y Theme Toggle) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--fondo);
+    color: var(--texto);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.logo { font-weight: 900; font-size: 1.2rem; }
+
+.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover { color: var(--rojo-acento); }
+
+/* Theme Toggle Button */
+.theme-toggle button {
+    background: none; border: none; cursor: pointer; color: var(--texto);
+    transform: translateY(-2px); transition: transform 0.2s ease;
+}
+
+/* 5. FOOTER (Completo) */
+.main-footer {
+    background-color: var(--fondo);
+    color: var(--texto);
+    padding: 80px 8% 40px 8%;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+.footer-logo { font-size: 2rem; font-weight: 900; }
+.footer-logo span { color: var(--rojo-acento); }
+.footer-top-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+/* ... (Demás estilos del footer que tienes en tu código) */

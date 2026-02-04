@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nombre de la Academia | Próximamente</title>
-    <link rel="stylesheet" href="style.css">
+    <title>XIRA DANCE STUDIO</title>
+    <link rel="stylesheet" href="base.css"> <link rel="stylesheet" href="home.css">
 </head>
 <body>
+<script src="script.js"></script> 
     
 <nav class="navbar">
     <div class="logo">XIRA DANCE</div>
     <ul class="nav-links">
-        <li><a href="#">CLASES</a></li>
-        <li><a href="#">HORARIOS</a></li>
-        <li><a href="#">INSCRIPCIÓN</a></li>
+    <nav class="nav-links">
+        <a href="index.html">INICIO</a>
+        <a href="clases.html">CLASES</a> 
+        <a href="horarios.html">HORARIOS</a>
+        <a href="inscripcion.html">INSCRIPCIÓN</a>
+    </nav>
         <span class="divider"></span> 
         <li><a href="#">LOGIN</a></li>
         <span class="divider"></span> 
@@ -26,28 +30,107 @@
     </ul>
 </nav>
 
- <section class="hero">
-        <div class="hero-content">
-            <p class="subtitle">DANCE STUDIO</p>
-            <h1>ENTRENA CON PASIÓN <br><span class="accent">BAILA SIN LÍMITES</span><br><span class="fuente-especial">Sé tú mismo.</span></h1> 
-            <button class="cta-button">EXPLORAR CLASES</button>
-        </div>
-    </section>
+<section class="hero">
+    <div class="hero-content">
+        <p class="subtitle" style="color: white; opacity: 0.8;">DANCE STUDIO</p>
+        <h1>ENTRENA CON PASIÓN <br>
+            <span class="accent">BAILA SIN LÍMITES</span><br>
+            <span class="fuente-especial">Sé tú mismo.</span>
+        </h1> 
+        <button class="cta-button" style="color: white; border-color: white;">EXPLORAR CLASES</button>
+    </div>
+</section>
 
-<section class="creators">
-    <h2>NUESTROS INSTRUCTORES</h2>
-    <div class="grid">
-        <div class="card">
-            <div class="photo-placeholder"></div>
-            <h3>NOMBRE INSTRUCTOR</h3>
-            <p>Especialidad (Salsa/Bachata)</p>
+<section class="instructors-section">
+    <p class="subtitle">TEAM XIRA</p>
+    <h2 class="section-main-title">NUESTROS <span class="accent">INSTRUCTORES</span></h2>
+
+    <div class="instructor-card">
+        
+        <div class="instructor-content">
+            <div class="instructor-image-container">
+                <img src="tu-foto-instructor.jpg" alt="Coreógrafo Xira">
+                <div class="instructor-name-tag">
+                    <h3>KATYA RIOS</h3>
+                    <p>CO-FUNDADORA Y COREÓGRAFA PRINCIPAL</p>
+                </div>
+            </div>
+            
+            <div class="instructor-details">
+                <p class="status-alert">[NOW ACCEPTING PRIVATE SESSIONS]</p>
+                <p class="bio-text">
+                    Con más de 5 años de experiencia profesional, ha establecido el estándar para la danza urbana en la región. Su enfoque combina técnica rigurosa con la libertad de movimiento de <strong>XIRA FLOW</strong>.
+                </p>
+            </div>
         </div>
-        <div class="card">
-            <div class="photo-placeholder"></div>
-            <h3>NOMBRE INSTRUCTOR</h3>
-            <p>Especialidad (Ballet/Urbano)</p>
+
+        <div class="instructor-media">
+            <div class="video-main-frame">
+                <div class="video-overlay">
+                    <span class="play-button">▶</span>
+                    <p>ADVANCED URBAN MASTERCLASS PERFORMANCE</p>
+                </div>
+            </div>
+            
+            <div class="thumbnail-row">
+                <div class="thumb-item active"></div>
+                <div class="thumb-item"></div>
+                <div class="thumb-item"></div>
+            </div>
         </div>
+        
+    </div>
+</section>
+
+<section class="programs">
+    <p class="subtitle">NUESTROS NIVELES</p>
+    <h2 class="section-title">ELIGE TU <span class="accent">DESAFÍO</span></h2>
+    
+    <div class="programs-grid">
+        <div class="program-card">
+            <span class="program-icon">🔰</span>
+            <h3>XIRA <span class="accent">START</span></h3>
+            <p class="level-tag">Nivel Inicial</p>
+            <p class="description">Clase diseñada para quienes recién comienzan o quieren reforzar bases. Se trabaja coordinación, musicalidad y confianza corporal.</p>
         </div>
+
+        <div class="program-card">
+            <span class="program-icon">🌊</span>
+            <h3>XIRA <span class="accent">FLOW</span></h3>
+            <p class="level-tag">Nivel Intermedio</p>
+            <p class="description">Para bailarines que ya dominan lo básico y buscan fluidez. Se profundiza en técnica, estilo y coreografías complejas.</p>
+        </div>
+
+        <div class="program-card">
+            <span class="program-icon">🔥</span>
+            <h3>XIRA <span class="accent">IMPACT</span></h3>
+            <p class="level-tag">Nivel Avanzado</p>
+            <p class="description">Entrenamiento intenso enfocado en potencia, precisión y presencia escénica. Ideal para llevar tu danza a un nivel profesional.</p>
+        </div>
+
+        <div class="program-card featured">
+            <span class="program-icon">🖤</span>
+            <h3>XIRA <span class="accent">TEAM</span></h3>
+            <p class="level-tag">Élite / Performance</p>
+            <p class="description">Grupo de alto rendimiento para competencias y proyectos coreográficos. Requiere audición y compromiso absoluto.</p>
+        </div>
+    </div>
+</section>
+
+<section class="support-split">
+    <a href="#" class="split-box faq-box">
+        <div class="box-content">
+            <p class="box-subtitle">¿ALGUNA DUDA?</p>
+            <h2 class="box-title">FAQ</h2>
+        </div>
+    </a>
+
+    <a href="#" class="split-box contact-box">
+        <div class="box-content">
+            <p class="box-subtitle">¡HABLEMOS!</p>
+            <h2 class="box-title">CONTACT</h2>
+        </div>
+    </a>
 </section>
 
 <footer class="main-footer">
@@ -101,33 +184,7 @@
             <p>DESIGN & CREATIVE: GLOBAL STUDIO NETWORK</p>
         </div>
     </footer>
-    <script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            const moonIcon = document.getElementById('moon-icon');
-            const sunIcon = document.getElementById('sun-icon');
-            
-            if (html.getAttribute('data-theme') === 'dark') {
-                html.setAttribute('data-theme', 'light');
-                moonIcon.style.display = 'block';
-                sunIcon.style.display = 'none';
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                moonIcon.style.display = 'none';
-                sunIcon.style.display = 'block';
-                localStorage.setItem('theme', 'dark');
-            }
-        }
 
-        // Cargar preferencia al inicio
-        window.onload = () => {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            document.getElementById('moon-icon').style.display = savedTheme === 'dark' ? 'none' : 'block';
-            document.getElementById('sun-icon').style.display = savedTheme === 'dark' ? 'block' : 'none';
-        };
-    </script>
 </footer>
 </body>
 </html>

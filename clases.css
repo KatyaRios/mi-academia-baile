@@ -1,0 +1,140 @@
+/* parte superior */
+.classes-tittle {
+    font-style: inter;
+    text-align: left;
+    padding-left: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: var(--navbar-height, 30px); /* desplaza hacia abajo para dejar espacio a la barra de navegación */
+}
+
+.classes-description {
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: var(--texto);
+}
+
+
+/* Contenedor principal con fondo dinámico */
+.classes-view {
+    background-color: var(--fondo);
+    color: var(--texto);
+    padding: 60px 5%;
+    min-height: 100vh;
+}
+
+/* Cabecera de sección estilo XIRA */
+.section-header {
+    margin-bottom: 40px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.vertical-bar {
+    width: 4px;
+    height: 30px;
+    background-color: var(--texto); /* Cambia con el tema */
+}
+
+.header-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    color: rgb(26, 215, 26); /* Color verde para el subtítulo */
+}
+
+/* Rejilla de Clases */
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* LA TARJETA (El cambio más grande respecto a tu lista actual) */
+.class-card {
+    background-color: var(--gris-claro); /* Se vuelve oscuro en dark mode */
+    border-radius: 40px; /* Bordes muy redondeados */
+    overflow: hidden;
+    padding: 15px;
+    border: 1px solid var(--linea-divisoria);
+    transition: transform 0.3s ease;
+}
+
+.card-image-container {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.level-tag {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: white;
+}
+
+/* Botón estilo píldora */
+.btn-book {
+    width: 100%;
+    background-color: var(--texto); /* Negro en modo claro, blanco en oscuro */
+    color: var(--fondo);
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--gris-claro);
+    border-radius: 10px;
+    border: 1px solid var(--linea-divisoria);
+}
+
+.filters input, .filters select {
+    padding: 10px;
+    border: 1px solid var(--linea-divisoria);
+    border-radius: 5px;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-size: 14px;
+}
+
+.filters input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filters select {
+    min-width: 150px;
+}
