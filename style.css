@@ -207,6 +207,7 @@ body {
     font-size: 1em;
     color: var(--texto);
     display: inline-block; /* Ayuda a que los márgenes y transformaciones funcionen mejor */
+    letter-spacing: 1px;
 }
 
 .subtitle {
@@ -219,7 +220,7 @@ body {
 
 h1 {
     font-family: 'Inter', sans-serif;
-    font-size: 6rem; /* Tamaño gigante como la imagen */
+    font-size: 5.2rem; /* Tamaño gigante como la imagen */
     font-weight: 900;
     line-height: 0.9;
     letter-spacing: -2px;
@@ -317,107 +318,109 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* 7. Footer Estilo Referencia (Ajustado) */
+/* 6. Footer estilizado */
 .main-footer {
-    padding: 8rem 5% 2rem 5%;
-    background-color: var(--fondo); /* Cambia 'white' por la variable */
-    border-top: 1px solid var(--linea-divisoria, rgba(128,128,128,0.2));
-    width: 100%;
-    transition: background-color 0.3s ease; /* Para que cambie suave igual que el resto */
+    background-color: var(--fondo);
+    color: var(--texto);
+    padding: 80px 8% 40px 8%;
+    border-top: 1px solid var(--linea-divisoria, rgba(128,128,128,0.1));
+    font-family: 'Inter', sans-serif;
 }
 
-.footer-link {
-    /* Reducimos el tamaño de 4rem/6rem a algo más manejable */
-    font-size: clamp(2rem, 5vw, 3.5rem); 
+/* Rejilla Superior */
+.footer-top-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* El logo ocupa más espacio */
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-logo {
+    font-size: 2rem;
     font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -1px; /* Un poco menos de espacio negativo para que sea legible */
-    line-height: 1.1;     /* Ajusta el espacio entre líneas si el texto salta */
-    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */
+    letter-spacing: -1px;
+    margin-bottom: 20px;
 }
 
-.footer-top {
+.footer-logo span {
+    color: var(--rojo-acento); /* "DANCE" en rojo como en la imagen */
+}
+
+.brand-description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    max-width: 350px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+/* Columnas de Menú */
+.footer-column h4 {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--rojo-acento);
+    margin-bottom: 25px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 12px;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: var(--texto);
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-column a:hover { opacity: 50; }
+
+/* Separador */
+.footer-divider {
+    border: 0;
+    border-top: 1px solid var(--linea-divisoria, rgba(128,128,128,0.1));
+    margin-bottom: 40px;
+}
+
+/* Bloque Contacto */
+.footer-middle {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Alinea los textos por la parte superior */
-    margin-bottom: 5rem;
-    gap: 20px; /* Evita que las palabras se toquen */
+    align-items: flex-end;
+    margin-bottom: 60px;
 }
 
-.footer-link.faq { 
-    color: var(--rojo-acento); 
-    flex: 1; /* Ayuda a empujar al otro elemento */
-}
-
-.footer-link.contact { 
-    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */;
-    text-align: right; /* Alinea CONTACT US a la derecha */
-    flex: 1;
-}
-
-.footer-columns {
-    display: flex;
-    gap: 15vw; /* Espacio proporcional entre las columnas de texto */
-    margin-bottom: 6rem;
-    text-align: left;
-}
-
-.col h4 {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    margin-bottom: 2rem;
-    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */;
-    border-bottom: 1px solid #eee; /* Línea sutil debajo de los títulos */
-    padding-bottom: 10px;
-    width: fit-content;
-}
-
-.col ul {
-    list-style: none;
-    line-height: 2.5;
-    font-size: 0.85rem;
-    color: var(--texto); /* Cambia el gris oscuro por la variable dinámica */
-    opacity: 0.8; /* Les damos un poco de transparencia para elegancia */
-}
-
-.footer-branding {
-    text-align: center;
-    margin: 10rem 0 5rem 0; /* Espaciado masivo para el logo final */
-}
-
-.huge-logo {
-    font-size: clamp(4rem, 15vw, 10rem); /* Logo gigante que se ajusta */
-    font-weight: 900;
-    letter-spacing: -5px;
-    line-height: 0.8;
-    margin-bottom: 2rem;
-    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */
-}
-
-.footer-info-text {
-    font-weight: 900;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    color: var(--texto); /* Asegura que el texto sea blanco sobre fondo negro */
-}
-
-.email-accent {
+.email-highlight {
     color: var(--rojo-acento);
     font-weight: 900;
+    font-style: italic;
     font-size: 1.1rem;
-    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.footer-bottom {
+.contact-details p {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 4px 0;
+}
+
+/* Línea Final */
+.footer-bottom-line {
     display: flex;
     justify-content: space-between;
-    font-size: 0.7rem;
-    color: var(--texto);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
     opacity: 0.5;
-    border-top: 1px solid var(--linea-divisoria, rgba(128,128,128,0.1));
-    padding-top: 3rem;
-    margin-top: 4rem;
+    text-transform: uppercase;
 }
 
 /* Contenedor del menú desplegable */
