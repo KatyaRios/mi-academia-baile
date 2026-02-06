@@ -1,37 +1,73 @@
-/* parte superior */
-.classes-tittle {
-    font-style: inter;
-    text-align: left;
-    padding-left: 2rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    margin-top: var(--navbar-height, 30px); /* desplaza hacia abajo para dejar espacio a la barra de navegación */
+/* Encabezado */
+
+.catalog-header {
+    padding-top: 2%;
+    padding-left: 2%;
+    display: flex;
+    justify-content: space-between; /* Empuja el texto a la izquierda y el botón a la derecha */
+    align-items: flex-end; /* Alinea el botón con la base del texto */
+    margin-bottom: 30px;
+    width: 80%; /* Asegura que ocupe todo el ancho disponible */
 }
 
-.classes-description {
-    font-family: 'Inter', sans-serif;
-    text-align: left;
-    padding-left: 2rem;
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-top: 10px;
-    margin-bottom: 20px;
+.header-title {
+    font: size 0.5px;;
+}
+
+
+/* --- EL BOTÓN (Derecha y Borde Definido) --- */
+.btn-secondary {
+    background: transparent !important;
     color: var(--texto);
+    /* Borde sólido reforzado para que se note claramente */
+    border: 1px solid var(--texto) !important; 
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    white-space: nowrap; /* Impide que el texto del botón se baje */
+    transition: all 0.3s ease;
 }
 
+/* Icono minimalista en código CSS */
+.calendar-icon {
+    width: 14px;
+    height: 12px;
+    border: 2px solid var(--texto);
+    border-radius: 2px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.calendar-icon::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--texto);
+}
 
 /* Contenedor principal con fondo dinámico */
 .classes-view {
     background-color: var(--fondo);
     color: var(--texto);
     padding: 60px 5%;
-    min-height: 100vh;
+    transition: background-color 0.3s ease;
 }
 
 /* Cabecera de sección estilo XIRA */
 .section-header {
     margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-title {
@@ -40,24 +76,43 @@
     gap: 15px;
 }
 
+.header-title h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
 .vertical-bar {
-    width: 4px;
-    height: 30px;
+    width: 6px; /* Made thicker */
+    height: 40px; /* Slightly taller */
     background-color: var(--texto); /* Cambia con el tema */
 }
 
 .header-subtitle {
-    font-size: 1rem;
-    opacity: 0.9;
-    letter-spacing: 1px;
-    color: rgb(26, 215, 26); /* Color verde para el subtítulo */
+    font-size: 0.9rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+    position: left;
+}
+
+/* Level sections */
+.level-section {
+    margin-bottom: 60px;
+}
+
+.elite-section .header-title h2 {
+    color: #ff0000; /* Red for ELITE */
+}
+
+.elite-section .vertical-bar {
+    background-color: #ff0000;
 }
 
 /* Rejilla de Clases */
 .classes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 /* LA TARJETA (El cambio más grande respecto a tu lista actual) */
@@ -87,8 +142,8 @@
     position: absolute;
     bottom: 15px;
     left: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
+    background: rgba(57, 42, 42, 0.2);
+    backdrop-filter: blur(6px);
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.7rem;
@@ -137,4 +192,42 @@
 
 .filters select {
     min-width: 150px;
+}
+
+/* Special styles for XIRA ELITE */
+.elite-card {
+    border: 2px solid #ff0000; /* Neon red border */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Neon glow effect */
+    position: relative;
+}
+
+.elite-card .card-content h3 {
+    font-size: 1.2rem; /* Larger typography */
+    font-weight: bold;
+}
+
+.elite-btn {
+    background-color: #ff0000; /* Intense red */
+    color: white;
+    font-size: 1.1rem; /* Larger font */
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Glow effect */
+}
+
+.elite-label {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 0, 0, 0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.elite-label:nth-child(2) {
+    top: 45px; /* Position second label below the first */
 }
