@@ -3,19 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Pattaya&family=Poppins:wght@100;400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Oswald:wght@200..700&family=Pattaya&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* 2. VARIABLES Y TEMA */
+/* 2. VARIABLES - MODO OSCURO PERMANENTE */
 :root {
     --rojo-acento: #ff3e3e;
-    --fondo: #ffffff;
-    --texto: #000000;
-    --gris-claro: #f4f4f4;
-    --transicion: 0.3s ease;
-}
-
-[data-theme="dark"] {
     --fondo: #0a0a0a;
     --texto: #ffffff;
     --gris-claro: #1a1a1a;
+    --transicion: 0.3s ease;
 }
 
 /* 3. RESET Y BASE */
@@ -25,33 +19,68 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--fondo);
     color: var(--texto);
-    padding-top: 80px; 
-    transition: background-color var(--transicion), color var(--transicion);
+padding-top: 90px;
 }
 
-/* 4. NAVBAR (Incluye Dropdown y Theme Toggle) */
+/* 4. NAVBAR FIJA */
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5%;
+    padding: 1rem 5%;
     position: fixed;
+    height: 80px;
     top: 0;
+    left: 0;
+    line-height: 1;
+    box-sizing: border-box;
     width: 100%;
     z-index: 1000;
     background: var(--fondo);
     color: var(--texto);
-    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
 }
 
-.logo { font-weight: 900; font-size: 1.2rem; }
 
-.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 5%;
+    position: fixed;
+    height: 80px;
+    top: 0;
+    left: 0;
+    line-height: 1;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 1000;
+    background: var(--fondo);
+    color: var(--texto);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    gap: 2rem;
+}
+
+
+.logo { 
+    font-weight: 900; 
+    font-size: 1.2rem; 
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 2rem; 
+    align-items: center; 
+}
 
 .nav-links a {
     text-decoration: none;
@@ -62,22 +91,80 @@ body {
     transition: color 0.2s ease;
 }
 
-.nav-links a:hover { color: var(--rojo-acento); }
-
-/* Theme Toggle Button */
-.theme-toggle button {
-    background: none; border: none; cursor: pointer; color: var(--texto);
-    transform: translateY(-2px); transition: transform 0.2s ease;
+.nav-links a:hover { 
+    color: var(--rojo-acento); 
 }
 
-/* 5. FOOTER (Completo) */
+
+.nav-links a.active {
+    color: var(--rojo-acento) !important;
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: var(--rojo-acento);
+    border-radius: 1px;
+}
+
+
+
+.create-account-btn {
+    background-color: transparent;
+    color: var(--rojo-acento);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid var(--rojo-acento);
+    transition: all 0.3s ease;
+}
+
+
+.create-account-btn:hover {
+    color: var(--rojo-acento);
+    border-color: #ff6b6b;
+    box-shadow: 0 0 10px rgba(255, 62, 62, 0.3);
+}
+
+
+.login-btn {
+    background-color: var(--rojo-acento);
+    color: white !important;
+    padding: 8px 16px;
+
+    border-radius: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #e63946;
+}
+
+/* Theme Toggle Button REMOVIDO - MODO OSCURO FIJO */
+
+/* 5. FOOTER */
 .main-footer {
     background-color: var(--fondo);
     color: var(--texto);
     padding: 80px 8% 40px 8%;
-    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .footer-logo { font-size: 2rem; font-weight: 900; }
 .footer-logo span { color: var(--rojo-acento); }
 .footer-top-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-/* ... (Demás estilos del footer que tienes en tu código) */
+
+/* OPTIMIZACIONES GENERALES */
+.no-transitions * {
+    transition: none !important;
+}
+

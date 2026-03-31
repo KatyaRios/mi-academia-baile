@@ -1,26 +1,45 @@
-/* Encabezado */
+/* ==========================================================================
+   1. ENCABEZADO PRINCIPAL (Catálogo de Clases)
+   ========================================================================== */
 
 .catalog-header {
-    padding-top: 2%;
-    padding-left: 2%;
+    padding: 60px 5% 20px 5%; /* Espaciado superior generoso */
     display: flex;
-    justify-content: space-between; /* Empuja el texto a la izquierda y el botón a la derecha */
-    align-items: flex-end; /* Alinea el botón con la base del texto */
-    margin-bottom: 30px;
-    width: 80%; /* Asegura que ocupe todo el ancho disponible */
+    justify-content: space-between; /* Texto a la izquierda, Botón a la derecha */
+    align-items: flex-end; /* Alinea el botón con la base del párrafo gris */
+    min-height: 120px;
+    margin-bottom: 40px;
 }
 
-.header-title {
-    font: size 0.5px;;
+.header-text {
+    flex: 1;
 }
 
+/* El título gigante e impactante */
+.header-tittle {
+    font-size: 3.5rem; 
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 0.9; /* Hace el título más compacto */
+    color: var(--texto);
+}
 
-/* --- EL BOTÓN (Derecha y Borde Definido) --- */
+.header-text p {
+    color: gray;
+    font-weight: 500;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    margin-top: 15px;
+    max-width: 600px; /* Evita que el párrafo sea demasiado largo */
+}
+
+/* --- BOTÓN DE RESERVAS (Derecha con borde sólido) --- */
 .btn-secondary {
     background: transparent !important;
     color: var(--texto);
-    /* Borde sólido reforzado para que se note claramente */
-    border: 1px solid var(--texto) !important; 
+    border: 2px solid var(--texto) !important; 
     padding: 12px 28px;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -30,11 +49,17 @@
     align-items: center;
     gap: 12px;
     cursor: pointer;
-    white-space: nowrap; /* Impide que el texto del botón se baje */
+    white-space: nowrap; 
+    margin-bottom: 5px;
     transition: all 0.3s ease;
 }
 
-/* Icono minimalista en código CSS */
+.btn-secondary:hover {
+    background-color: var(--texto) !important;
+    color: var(--fondo);
+}
+
+/* Icono de calendario minimalista */
 .calendar-icon {
     width: 14px;
     height: 12px;
@@ -54,20 +79,23 @@
     background: var(--texto);
 }
 
-/* Contenedor principal con fondo dinámico */
+/* ==========================================================================
+   2. SECCIONES DE NIVELES (XIRA START, FLOW, IMPACT)
+   ========================================================================== */
+
 .classes-view {
     background-color: var(--fondo);
     color: var(--texto);
-    padding: 60px 5%;
-    transition: background-color 0.3s ease;
+    padding: 20px 5% 60px 5%;
 }
 
-/* Cabecera de sección estilo XIRA */
 .section-header {
     margin-bottom: 40px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Título izq, Subtítulo der */
+    align-items: flex-end; /* Ambos nivelados sobre la línea */
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2); 
+    padding-bottom: 15px;
 }
 
 .header-title {
@@ -77,157 +105,179 @@
 }
 
 .header-title h2 {
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-weight: 800;
+    font-size: 1.8rem;
     margin: 0;
+    text-transform: uppercase;
 }
 
 .vertical-bar {
-    width: 6px; /* Made thicker */
-    height: 40px; /* Slightly taller */
-    background-color: var(--texto); /* Cambia con el tema */
+    width: 6px; 
+    height: 35px;
+    background-color: var(--texto);
 }
 
 .header-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.6;
     text-transform: uppercase;
-    position: left;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
-/* Level sections */
-.level-section {
-    margin-bottom: 60px;
-}
-
+/* Colores especiales para ELITE */
 .elite-section .header-title h2 {
-    color: #ff0000; /* Red for ELITE */
+    color: #ff0000;
 }
 
 .elite-section .vertical-bar {
     background-color: #ff0000;
 }
 
-/* Rejilla de Clases */
+/* ==========================================================================
+   3. REJILLA Y TARJETAS DE CLASE
+   ========================================================================== */
+
 .classes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Ajustamos el 280px a algo más pequeño como 250px para que entren mejor */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-/* LA TARJETA (El cambio más grande respecto a tu lista actual) */
 .class-card {
-    background-color: var(--gris-claro); /* Se vuelve oscuro en dark mode */
-    border-radius: 40px; /* Bordes muy redondeados */
+    background-color: var(--gris-claro);
+    border-radius: 35px;
     overflow: hidden;
     padding: 15px;
-    border: 1px solid var(--linea-divisoria);
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
+    transform: translateZ(0);
+}
+
+.level-section {
+    content-visibility: auto;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
 }
 
 .card-image-container {
     position: relative;
-    border-radius: 30px;
+    border-radius: 25px;
     overflow: hidden;
-    aspect-ratio: 16/10;
+    /* Cambiamos a un ratio más horizontal para que no ocupe tanto alto */
+    aspect-ratio: 16 / 9; 
+    width: 100%;
+    /* Ponemos un tope para que en pantallas grandes no sea gigante */
+    max-height: 250px; 
 }
 
 .card-image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Esto mantiene la proporción de la foto sin deformarla */
+    display: block;
 }
 
 .level-tag {
     position: absolute;
     bottom: 15px;
     left: 15px;
-    background: rgba(57, 42, 42, 0.2);
-    backdrop-filter: blur(6px);
-    padding: 5px 12px;
+    background: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: none !important; /* Desactiva el desenfoque si sigue lento */
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.7rem;
     color: white;
+    font-weight: bold;
 }
 
-/* Botón estilo píldora */
+.card-content {
+    padding: 10px 5px;
+}
+
+.card-content h3 {
+    margin: 15px 0 10px 0;
+    font-size: 1.3rem;
+}
+
+.card-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Botón de reserva en tarjeta */
 .btn-book {
     width: 100%;
-    background-color: var(--texto); /* Negro en modo claro, blanco en oscuro */
+    background-color: var(--texto);
     color: var(--fondo);
     border: none;
-    padding: 15px;
-    border-radius: 30px;
-    font-weight: 700;
+    padding: 14px;
+    border-radius: 50px;
+    font-weight: 800;
     margin-top: 20px;
     cursor: pointer;
     text-transform: uppercase;
+    transition: opacity 0.2s;
 }
 
-/* Filtros */
+.btn-book:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   4. FILTROS Y OTROS
+   ========================================================================== */
+
 .filters {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 50px;
+    padding: 25px;
     background-color: var(--gris-claro);
-    border-radius: 10px;
+    border-radius: 20px;
     border: 1px solid var(--linea-divisoria);
 }
 
 .filters input, .filters select {
-    padding: 10px;
+    padding: 12px 15px;
     border: 1px solid var(--linea-divisoria);
-    border-radius: 5px;
+    border-radius: 12px;
     background-color: var(--fondo);
     color: var(--texto);
     font-size: 14px;
+    outline: none;
 }
 
-.filters input {
-    flex: 1;
-    min-width: 200px;
-}
+.filters input { flex: 1.5; max-width: 300px; min-width: 180px; }
+.filters select { flex: 1; min-width: 140px; }
 
-.filters select {
-    min-width: 150px;
-}
-
-/* Special styles for XIRA ELITE */
+/* Estilos Elite Card */
 .elite-card {
-    border: 2px solid #ff0000; /* Neon red border */
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Neon glow effect */
-    position: relative;
-}
-
-.elite-card .card-content h3 {
-    font-size: 1.2rem; /* Larger typography */
-    font-weight: bold;
+    border: 2px solid #ff0000;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15);
 }
 
 .elite-btn {
-    background-color: #ff0000; /* Intense red */
-    color: white;
-    font-size: 1.1rem; /* Larger font */
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Glow effect */
+    background-color: #ff0000 !important;
+    color: white !important;
 }
 
-.elite-label {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: rgba(255, 0, 0, 0.9);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.6rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.elite-label:nth-child(2) {
-    top: 45px; /* Position second label below the first */
+@media (max-width: 768px) {
+    .card-image-container {
+        /* En celulares o pantallas chicas, reducimos el alto máximo */
+        max-height: 180px; 
+    }
+    
+    .header-tittle {
+        font-size: 2.2rem; /* Achicamos el título para que no empuje todo hacia abajo */
+    }
 }
